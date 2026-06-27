@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Formularz notatek (Rybnik)</title>
+        <link rel="icon" href="data:,">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com/">
+<!-- Here CSS begin--> 
+
+<!-- Here JS begin--> 
+
+    </head>
+
+<script>
+let faucet = ``;
+let sink = ``;
+let dish = ``;
+let hub = ``;
+let oven = ``;
+let micro = ``;
+let hood = ``;
+let fridge = ``;
+let wm = ``;
+
+function click_contact_Yes() {
+    document.getElementById('contact_opt').style.display = "block";
+ }
+function click_contact_No() {
+    document.getElementById('contact_opt').style.display = "none";
+ }
+function click_window_Yes() {
+    document.getElementById('window_opt').style.display = "block";
+ }
+function click_window_No() {
+    document.getElementById('window_opt').style.display = "none";
+ }
+function click_vent_Yes() {
+    document.getElementById('vent_opt').style.display = "block";
+ }
+function click_vent_No() {
+    document.getElementById('vent_opt').style.display = "none";
+ }
+function click_tiles_Yes() {
+    document.getElementById('window_tiles').style.display = "block";
+ }
+function click_tiles_No() {
+   document.getElementById('window_tiles').style.display = "none";
+ }
+function click_tiles_parameters_unver() {
+    document.getElementById(`tiles_parameters_ver`).checked = false;
+}
+function click_tiles_parameters_ver() {
+    document.getElementById(`tiles_ver`).checked = true;
+}
+function click_window_ver_1() {
+    document.getElementById(`window_ver_1`).checked = false;
+}
+function click_window_ver_2() {
+    document.getElementById(`window_ver_2`).checked = false;
+}
+function check_equipment(equipment, type) {
+    var var_equipment_1 = document.getElementById(`${equipment}_1`).disabled;
+    var var_equipment_2 = document.getElementById(`${equipment}_2`).disabled;
+    var var_equipment_3 = document.getElementById(`${equipment}_3`).disabled;
+   switch (type) {
+       case 1:
+            var_equipment_1 = true;
+            var_equipment_2 = false;
+            var_equipment_3 = false;
+           break;
+       case 2:
+            var_equipment_2 = true;
+            var_equipment_1 = false;
+            var_equipment_3 = false;
+           break;
+       case 3:
+            var_equipment_3 = true;
+            var_equipment_2 = false;
+            var_equipment_1 = false;
+           break;
+   } 
+    document.getElementById(`${equipment}_1`).disabled = var_equipment_1;
+    document.getElementById(`${equipment}_2`).disabled = var_equipment_2;
+    document.getElementById(`${equipment}_3`).disabled = var_equipment_3;
+}
+
+function uncheck() {
+    document.getElementById(`wall_ver`).checked = false;
+}
+
+function reload() {
+   var buttons = document.querySelectorAll('.button_eq');
+   buttons.forEach(function(clear_button){
+      clear_button.disabled = false;
+   });
+   faucet = sink = dish = hub = oven = micro = hood = fridge = wm = `0`;
+}
+
+function click_eq_faucet_1() {
+   check_equipment(`eq_faucet`, 1);
+   faucet = '11';
+}
+function click_eq_faucet_2() {
+   check_equipment(`eq_faucet`, 2);
+   faucet = '12';
+}
+function click_eq_faucet_3() {
+   check_equipment(`eq_faucet`, 3);
+   faucet = '13';
+}
+function click_eq_sink_1() {
+   check_equipment(`eq_sink`, 1);
+   sink = '21';
+}
+function click_eq_sink_2() {
+   check_equipment(`eq_sink`, 2);
+   sink = '22';
+}
+function click_eq_sink_3() {
+   check_equipment(`eq_sink`, 3);
+   sink = '23';
+}
+function click_eq_dish_1() {
+   check_equipment(`eq_dish`, 1);
+   dish = '31';
+}
+function click_eq_dish_2() {
+   check_equipment(`eq_dish`, 2);
+   dish = '32';
+}
+function click_eq_dish_3() {
+   check_equipment(`eq_dish`, 3);
+   dish = '33';
+}
+function click_eq_hub_1() {
+   check_equipment(`eq_hub`, 1);
+   hub = '41';
+}
+function click_eq_hub_2() {
+   check_equipment(`eq_hub`, 2);
+   hub = '42';
+}
+function click_eq_hub_3() {
+   check_equipment(`eq_hub`, 3);
+   hub = '43';
+}
+function click_eq_oven_1() {
+   check_equipment(`eq_oven`, 1);
+   oven = '51';
+}
+function click_eq_oven_2() {
+   check_equipment(`eq_oven`, 2);
+   oven = '52';
+}
+function click_eq_oven_3() {
+   check_equipment(`eq_oven`, 3);
+   oven = '53';
+}
+function click_eq_micro_1() {
+   check_equipment(`eq_micro`, 1);
+   micro = '61';
+}
+function click_eq_micro_2() {
+   check_equipment(`eq_micro`, 2);
+   micro = '62';
+}
+function click_eq_micro_3() {
+   check_equipment(`eq_micro`, 3);
+   micro = '63';
+}
+function click_eq_hood_1() {
+   check_equipment(`eq_hood`, 1);
+   hood = '71';
+}
+function click_eq_hood_2() {
+   check_equipment(`eq_hood`, 2);
+   hood = '72';
+}
+function click_eq_hood_3() {
+   check_equipment(`eq_hood`, 3);
+   hood = '73';
+}
+function click_eq_fridge_1() {
+   check_equipment(`eq_fridge`, 1);
+   fridge = '81';
+}
+function click_eq_fridge_2() {
+   check_equipment(`eq_fridge`, 2);
+   fridge = '82';
+}
+function click_eq_fridge_3() {
+   check_equipment(`eq_fridge`, 3);
+   fridge = '83';
+}
+function click_eq_wm_1() {
+   check_equipment(`eq_wm`, 1);
+   wm = '91';
+}
+function click_eq_wm_2() {
+   check_equipment(`eq_wm`, 2);
+   wm = '92';
+}
+function click_eq_wm_3() {
+   check_equipment(`eq_wm`, 3);
+   wm = '93';
+}
+
+
+
+// When the user clicks on the button, open the modal
+function note_click() {
+   document.getElementById("modal").style.display = "block";
+
+   var today = new Date();
+   var dd = String(today.getDate()).padStart(2, '0');
+   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+   var yyyy = today.getFullYear();
+   today =  dd + '/' + mm + '/' + yyyy;
+
+   function to_check(value, comment) {
+        if (!value || value.value == "") {
+            return comment;
+        } else {
+            return value.value;
+        }
+    }
+
+    var sla = to_check(document.querySelector('input[name="sla"]'), `SLA ID`);
+    var stage = to_check(document.querySelector('input[name="stage"]:checked'), `Wstępny czy Finalny?`);
+    var contact = to_check(document.querySelector('input[name="contact"]:checked'), `Czy klient wyraża zgodę na kontakt?`);
+    var user = to_check(document.querySelector('input[name="user"]'), `Konsultant`);
+    var measurement = to_check(document.querySelector('input[name="measurement"]:checked'), `IKEA czy Własny?`);
+    var assembly = to_check(document.querySelector('input[name="assembly"]:checked'), `IKEA czy Własny?`);
+    var angle = to_check(document.querySelector('input[name="angle"]:checked'), `Wymaga weryfikacji`);
+    var window = to_check(document.querySelector('input[name="window"]:checked'), `Wymaga weryfikacji`);
+    var floor = to_check(document.querySelector('input[name="floor"]:checked'), `Wymaga weryfikacji`);
+    var vent = to_check(document.querySelector('input[name="vent"]:checked'), `Wymaga weryfikacji`);
+    var installation = to_check(document.querySelector('input[name="installation"]:checked'), `Wymaga weryfikacji`);
+    var wall = to_check(document.querySelector('input[name="wall_type"]'), `Wymaga weryfikacji`);
+    var tiles = to_check(document.querySelector('input[name="tiles"]:checked'), `Wymaga weryfikacji`);
+    var faucet_collision = to_check(document.querySelector('input[name="window_faucet"]:checked'), `Potencjalna kolizja baterii kuchennej z oknem przy jego otwieraniu wymaga weryfikacji.`);
+    var vent_collision = to_check(document.querySelector('input[name="vent_collision"]:checked'), `Położenie kratki wentylacyjnej wymaga weryfikacji, żeby upewnić się czy nie wypada ona za zabudową meblową.`);
+   var equipment = [0];
+
+   var note = "";
+   var pager = "";
+   var verification = document.querySelectorAll('input[type="radio"][label="Weryfikacja"]');
+
+   equipment.push(faucet, sink, dish, hub, oven, micro, hood, fridge, wm);
+   var equipment_ikea = ``;
+   var equipment_not_ikea = ``;
+   var equipment_own = ``;
+
+   for (var i = 0; i < equipment.length; i++){
+   var supp = equipment[i];
+   switch (supp) {
+      case '11':
+         equipment_ikea += `Bateria, `;
+         break;
+      case '12':
+         equipment_not_ikea += `Bateria, `;
+         break;
+      case '13':
+         equipment_own += `Bateria, `;
+         break;
+      case '21':
+         equipment_ikea += `Zlew, `;
+         break;
+      case '22':
+         equipment_not_ikea += `Zlew, `;
+         break;
+      case '23':
+         equipment_own += `Zlew, `;
+         break;
+      case '31':
+         equipment_ikea += `Zmywarka, `;
+         break;
+      case '32':
+         equipment_not_ikea += `Zmywarka, `;
+         break;
+      case '33':
+         equipment_own += `Zmywarka, `;
+         break;
+      case '41':
+         equipment_ikea += `Płyta grzewcza, `;
+         break;
+      case '42':
+         equipment_not_ikea += `Płyta grzewcza, `;
+         break;
+      case '43':
+         equipment_own += `Płyta grzewcza, `;
+         break;
+      case '51':
+         equipment_ikea += `Piekarnik, `;
+         break;
+      case '52':
+         equipment_not_ikea += `Piekarnik, `;
+         break;
+      case '53':
+         equipment_own += `Piekarnik, `;
+         break;
+      case '61':
+         equipment_ikea += `Mikrofala, `;
+         break;
+      case '62':
+         equipment_not_ikea += `Mikrofala, `;
+         break;
+      case '63':
+         equipment_own += `Mikrofala, `;
+         break;
+      case '71':
+         equipment_ikea += `Okap, `;
+         break;
+      case '72':
+         equipment_not_ikea += `Okap, `;
+         break;
+      case '73':
+         equipment_own += `Okap, `;
+         break;
+      case '81':
+         equipment_ikea += `Lodówka, `;
+         break;
+      case '82':
+         equipment_not_ikea += `Lodówka, `;
+         break;
+      case '83':
+         equipment_own += `Lodówka, `;
+         break;
+      case '91':
+         equipment_ikea += `Pralka, `;
+         break;
+      case '92':
+         equipment_not_ikea += `Pralka, `;
+         break;
+      case '93':
+         equipment_own += `Pralka, `;
+         break;
+   }
+}
+   note += `INFORMACJE O PROJEKCIE:` + '\r\n' + '\r\n';
+   note += `- ID/Pracownik: ${sla}/${user}` + '\r\n';
+   note += `- Projekt: ${stage} (${today})` + '\r\n';
+   note += `- Zgoda na kontakt: ${contact}` + '\r\n';
+   note += `- Montaż: ${assembly}` + '\r\n';
+   note += `- Wymiarowanie: ${measurement}`+ '\r\n' + '\r\n';
+   note += `INFORMACJE O POMIESZCZENIU:` + '\r\n' + '\r\n';
+   note += `- Ściany: ${wall}` + '\r\n';
+   note += `- Kąty: ${angle}` + '\r\n';
+   if (document.getElementById(`windows_yes`).checked == true) {
+      if (document.getElementById("ground_window_1") == null  || document.getElementById("ground_window_1").value == "") {
+        var window_ground_1_full = `Wysokość do wnęki okiennej wymaga weryfikacji.`;
+      } else {
+        var window_ground_1_num = document.getElementById("ground_window_1").value;
+        var window_ground_1 = window_ground_1_num.toString();
+        var window_ground_1_full = `Wnęka okienna jest na wysokości ${window_ground_1}mm.`;
+      }
+      if (document.getElementById("ground_window_2") == null  || document.getElementById("ground_window_2").value == "") {
+        var window_ground_2_full = `Wysokość do skrzydła okiennego wymaga weryfikacji.`;
+      } else {
+        var window_ground_2_num = document.getElementById("ground_window_2").value;
+        var window_ground_2 = window_ground_2_num.toString();
+        var window_ground_2_full = `Skrzydło okienne jest na wysokości ${window_ground_2}mm.`;
+      }
+      note += `- Okno: ${window}` + ` ${window_ground_1_full}` + ` ${window_ground_2_full}` + ` ${faucet_collision}` + '\r\n';
+    } else {
+      note += `- Okno: ${window}` + '\r\n';
+    }
+   if (document.getElementById("tiles").checked == true) {
+    if (document.getElementById("tiles_down") == null  || document.getElementById("tiles_down").value == "") {
+        var tiles_down_full = `Wysokość, na której zaczynając się kafelki wymaga weryfikacji.`;
+      } else {
+        var tiles_down_num = document.getElementById("tiles_down").value;
+        var tiles_down = tiles_down_num.toString();
+        var tiles_down_full = `Kafelki zaczynają się na wysokości ${tiles_down}mm.`;
+      }
+      if (document.getElementById("tiles_up") == null  || document.getElementById("tiles_up").value == "") {
+        var tiles_up_full = `Wysokość, na której kończą się kafelki wymaga weryfikacji.`;
+      } else {
+        var tiles_up_num = document.getElementById("tiles_up").value;
+        var tiles_up = tiles_up_num.toString();
+        var tiles_up_full = `Kafelki kończą się na wysokości ${tiles_up}mm.`;
+      }
+      note += `- Kafelki: ${tiles}` + ` ${tiles_down_full}` + ` ${tiles_up_full}` + '\r\n';
+      } else {
+         note += `- Kafelki: ${tiles}` + '\r\n'
+      }
+   note += `- Ogrzewanie: ${floor}` + '\r\n';
+   if (document.getElementById(`vent_yes`).checked == true) {
+      note += `- Wentylacja: ${vent}` + ` ${vent_collision}` + '\r\n';
+    } else {
+      note += `- Wentylacja: ${vent}` + '\r\n';
+    }
+    note += `- Przyłącza: ${installation}` + '\r\n' + '\r\n';
+    if (equipment_ikea == null && equipment_not_ikea == null && equipment_own == null) {
+    } else {
+          note += `WYPOSAŻENIE:` + '\r\n' + '\r\n';
+    if (equipment_ikea  ?? null) {
+        note += `- z IKEA: ` + equipment_ikea + '\r\n';
+        }
+    if (equipment_not_ikea ?? null) {
+            note += `- spoza IKEA: ` + equipment_not_ikea + '\r\n';
+        } 
+    if (equipment_own ?? null) {
+            note += `- montaż własny: ` + equipment_own + '\r\n';
+        }
+    }
+
+
+   note += '\r\n' + `INFORMACJE DLA KLIENTA:` + '\r\n' + '\r\n';
+   note += `- Przygotowana lista zakupów w talonie informacyjnym może różnić się od tej dostępnej w wycenie planera kuchennego;` + '\r\n';
+   note += `- Przyłącza instalacyjne muszą być przygotowane przez Klienta przed montażem kuchni zgodnie z dołączoną instrukcją;` + '\r\n';
+   note += `- Wentylacja grawitacyjna/mechaniczna musi pozostać niezabudowana;` + '\r\n';
+   note += `- IKEA nie ponosi odpowiedzialności za dopasowanie sprzętu AGD spoza swojej oferty do mebli kuchennych;` + '\r\n';
+   note += `- Dostawa obejmuje elementy w standardowych wymiarach. Wszelkie modyfikacje szafek, ewentualne cięcia paneli maskujących lub blatów odbywają się podczas montażu;` + '\r\n' + '\r\n';
+
+   if (assembly == "IKEA") {
+      note += `INFORMACJE MONTAŻOWE:` + '\r\n' + '\r\n';
+      note += `- Klient ma obowiązek posiadania opisanego projektu w wersji papierowej w dniu montażu.` + '\r\n';
+      note += `- W trakcie montażu należy zapewnić montażystom miejsce do montażu (np. do cięcia paneli maskujących, blatu) oraz toaletę.  ` + '\r\n';
+   } else {
+   }
+
+   note += '\r\n' + `NOTATKI WŁASNE:` + '\r\n' + '\r\n';
+
+   pager += `#Projekt ${stage}` + '\r\n' + '\r\n';
+   if (stage == "Wstępny") {
+      pager += `*Ten projekt nie jest jeszcze kompletny i nie został zatwierdzony przez naszych specjalistów. Aby Twój projekt był gotowy do realizacji umów się na kolejne spotkanie w trakcie którego naniesiemy niezbędne zmiany i zweryfikujemy jego poprawność.` + '\r\n' + '\r\n';
+      pager += `Do weryfikacji przed kolejnym spotkaniem:` + '\r\n';
+
+      verification.forEach(input => {
+            if (input.checked) {
+                  const dataVer = input.getAttribute("data-ver");
+                  if (dataVer) {
+                     pager += dataVer + '\r\n';
+                  }
+            }
+         });
+
+   } else {
+            pager += `*Ten projekt został sprawdzony i zatwierdzony - jest gotowy do zamówienia ` + '\r\n' + '\r\n';
+   }
+
+   document.getElementById("note_text").value = note;
+   document.getElementById("pager_text").value = pager;
+}
+function pager_click() {
+   var copyText = document.getElementById("pager_text");
+   copyText.select();
+   copyText.setSelectionRange(0, 99999);
+   navigator.clipboard
+   .writeText(copyText.value)
+   .then(() => {
+      console.log("Skopiowano do schowka");
+   })
+   .catch(() => {
+      console.log("Coś poszło nie tak, spróbuj raz jeszcze!");
+   });
+}
+function clip_click() {
+   var copyText = document.getElementById("note_text");
+   copyText.select();
+   copyText.setSelectionRange(0, 99999);
+   navigator.clipboard
+   .writeText(copyText.value)
+   .then(() => {
+      console.log("Skopiowano do schowka");
+   })
+   .catch(() => {
+      console.log("Coś poszło nie tak, spróbuj raz jeszcze!");
+   });
+}
+
+function note_close() {
+   document.getElementById("modal").style.display = "none";
+   document.getElementById("note_text").value = "";
+   equipment_ikea = ``;
+   equipment_not_ikea = ``;
+   equipment_own = ``;
+}
+
+</script>
+<style>
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+h1 {
+    text-align: center;
+    margin: 30px 0 30px 0;
+}
+h2 {
+    margin: 30px 0 30px 0;
+}
+
+.slide {
+    margin: 0px -6px 0px -6px;
+}
+.separator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    height: 1px;
+    background-color: #dfdfdf;
+    width: 100%;
+}
+.sub_separator {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    height: 1px;
+    background-color: #ececec;
+    width: 98%;
+}
+.app .sub_separator {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border: none;
+    height: 1px;
+    background-color: #ececec;
+    width: 98%;
+}
+.sub_separator_small {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 60px;
+    border: none;
+    height: 1px;
+    background-color: #ececec;
+    align-items: flex-end;
+    width: 94%;
+}
+
+        .logo {
+            float: left;
+            width: 72px;
+            height: 37px;
+            margin: 0px 75px 0px 10px;
+        }
+
+    footer {
+        flex: 0 0 20px;
+        margin-bottom: 10px;
+        margin-top: auto;
+        width: 100%;
+    }
+        footer p {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .site_content {
+            width: 1200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+        }
+        .question {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+        .question input {
+            border-style: none;
+            border: none;
+            font-size: 12px;
+            font-weight: 700;
+            background-color: rgb(243, 243, 243);
+            margin: 10px 10px 10px 10px;
+            padding: 10px 20px 10px 20px ;
+            width: 75px;
+            border-radius: 50px;
+            text-align: center;
+        }
+        .sub_question {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: space-between;
+            margin: 10px 0px 10px 60px;
+        }
+        .sub_question input {
+            border-style: none;
+            border: none;
+            font-size: 12px;
+            font-weight: 700;
+            background-color: rgb(243, 243, 243);
+            margin: 10px 10px 10px 10px;
+            padding: 10px 20px 10px 20px ;
+            width: 75px;
+            border-radius: 50px;
+            text-align: center;
+        }
+        .sub_question input input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .q_radio {
+            gap: 30px;
+        }
+        .q_radio_button button {
+            border-style: none;
+            border: none;
+            font-size: 12px;
+            font-weight: 700;
+            background-color: rgb(243, 243, 243);
+            margin: 10px 10px 10px 10px;
+            padding: 10px 20px 10px 20px ;
+            width: 115px;
+            border-radius: 50px;
+        }
+        .q_radio_button button:hover {
+            background-color: rgb(218, 218, 218);
+            transition-duration: 10ms;
+            cursor: pointer;
+        }
+        .q_radio_button button:active {
+            color: white;
+            background-color: black;
+        }
+        .q_radio_button button:disabled {
+            color: white;
+            background-color: black;
+            cursor: default;
+        }
+
+        .q_radio_button_eq button {
+            border-style: none;
+            border: none;
+            font-size: 12px;
+            font-weight: 700;
+            background-color: rgb(243, 243, 243);
+            margin: 10px 10px 10px 10px;
+            padding: 10px 20px 10px 20px ;
+            width: 125px;
+            border-radius: 50px;
+        }
+        .q_radio_button_eq button:hover {
+            background-color: rgb(218, 218, 218);
+            transition-duration: 10ms;
+            cursor: pointer;
+        }
+        .q_radio_button_eq button:active {
+            color: white;
+            background-color: black;
+        }
+        .q_radio_button_eq button:disabled {
+            color: white;
+            background-color: black;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        #window_opt {
+            display: none;
+        }
+        #vent_opt {
+            display: none;
+        }
+        .main_button {
+            align-self: center;
+            border-style: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            background-color: rgb(00, 88, 163);
+            margin: 30px 10px 30px 10px;
+            padding: 10px 20px 10px 20px ;
+            height: 56px;
+            width: 300px;
+            border-radius: 50px;
+        }
+        .main_button:hover {
+            background-color: rgb(0, 79, 147);
+            transition: 10ms;
+            cursor: pointer;
+        }
+        .main_button:active {
+            background-color: rgb(0, 62, 114);
+            transition: 10ms;
+            cursor: pointer;
+        }
+        .note {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            backdrop-filter: blur(2px);
+
+        }
+        .note_content {
+            background-color: #fefefe;
+            margin: 2% auto; /* 15% from the top and centered */
+            padding: 30px;
+            border: 1px solid rgb(250, 250, 250);
+            width: 810px; /* Could be more or less, depending on screen size */
+        }
+
+        .note_content h2 {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 20px;
+            margin: 0 0 0 0;
+        }
+        .close:hover,.close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            }
+
+        .textarea {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 790px;
+            height: 350px;
+            font-size: 13px;
+            resize: none;
+            padding: 10px;
+            line-height: 150%;
+        }
+        .textarea2 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 790px;
+            height: 150px;
+            font-size: 13px;
+            resize: none;
+            padding: 10px;
+            line-height: 150%;
+        }
+        .note_flex {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .clip_button {
+            align-self: center;
+            border-style: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            background-color: rgb(00, 88, 163);
+            margin: 20px 10px 0 10px;
+            padding: 10px 20px 10px 20px ;
+            height: 56px;
+            width: 200px;
+            border-radius: 50px;
+        }
+        .clip_button:hover {
+            background-color: rgb(0, 79, 147);
+            transition: 10ms;
+            cursor: pointer;
+        }
+        .clip_button:active {
+            background-color: rgb(0, 62, 114);
+            transition: 10ms;
+            cursor: pointer;
+        }
+        .close_button {
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .close_button:hover {
+            transition: 10ms;
+            cursor: pointer;
+        }
+        .close_button:active {
+            transition: 10ms;
+            cursor: pointer;
+        }
+        .header_flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 6px 20px 6px;
+        }
+        .buttons {
+            padding: 4px;
+            position: relative;
+            width: fit-content;
+          }      
+          .buttons input {
+            appearance: none;
+            cursor: pointer;
+            border-style: none;
+            border: none;
+            font-size: 12px;
+            font-weight: 700;
+            background-color: rgb(243, 243, 243);
+            margin: 10px 10px 10px 10px;
+            padding: 10px 20px 10px 20px ;
+            width: 115px;
+            border-radius: 50px;
+          } 
+          .buttons input:checked {
+            color: white;
+            background-color: black;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+          }      
+          .buttons input::before {
+            content: attr(label);
+            text-align: center;
+          }
+          .data_lists::-webkit-calendar-picker-indicator {
+            display:none !important;
+          }
+          .data_lists_eq::-webkit-calendar-picker-indicator {
+            display:none !important;
+          }
+          .q_radio_button_eq .buttons input {
+            width: 130px;
+          }
+          .q_radio_button_eq .buttons {
+            width: 220px;
+          }
+          .reload {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: none;
+            font-size: 22px;
+            font-weight: 100;
+            background-color: rgb(243, 243, 243);
+            margin: 10px 10px 10px 10px;
+            padding: 3px 12px 7px 12px;
+            border-radius: 50px;
+          }
+          .reload:hover {
+            background-color: rgb(218, 218, 218);
+            transition-duration: 10ms;
+            cursor: pointer;
+          }
+          .reload:active {
+                color: white;
+                background-color: black;
+          }
+          #window_tiles {
+            display: none;
+          }
+          #contact_opt {
+              display: none;
+          }
+
+</style>
+
+    <body>
+        <div class="container">
+            <div class="site_content">
+                <h1>Notatki</h1>
+                <div class="section">
+                    <h2>1. Informacje o projekcie</h2>
+                    <hr class="sub_separator">
+                    <div class="question">
+                        <label for="user_list">1.1. Jaki numer SLA ID oraz przez kogo został wykonany?</label>
+                        <div class="q_radio_tab">
+                            <input class="data_lists" list="sla_list" name="sla" placeholder="SLA ID">
+                            <datalist id="sla_list">
+                            </datalist>
+                            <input class="data_lists" list="user_list" name="user" style="width: 75px;" placeholder="Pracownik">
+                            <datalist id="user_list">
+                            </datalist>
+                        </div>
+                </div>
+                    <hr class="sub_separator">
+                    <div class="question">
+                        <div class="q_text"><span>1.2. Na jakim etapie jest projekt?</span></div>
+                        <div class="buttons">
+                            <input label="Wstępny" type="radio" name="stage" value="Wstępny">
+                            <input label="Finalny" type="radio" name="stage" value="Finalny">
+                        </div>
+                    </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>1.3. Czy klient wyraża zgodę na kontakt w sprawie planowanego zakupu?</span></div>
+                    <div class="buttons">
+                        <input label="Tak" type="radio" name="contact" value="Tak">
+                        <input label="Nie" type="radio" name="contact" value="Nie">
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>1.4. Przez kogo zostanie wykonany montaż?</span></div>
+                    <div class="buttons">
+                        <input label="IKEA" type="radio" name="assembly" value="IKEA">
+                        <input label="Klient" type="radio" name="assembly" value="Własny">
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>1.5. Przez kogo zostało wykonane wymiarowanie??</span></div>
+                    <div class="buttons">
+                        <input label="IKEA" type="radio" name="measurement" value="IKEA">
+                        <input label="Klient" type="radio" name="measurement" value="Własne (IKEA nie ponosi odpowiedzialności za wymiary wprowadzone do projektu)">
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                </div>
+                <div class="section">
+                <h2>2. Informacje o pomieszczeniu</h2>
+                <hr class="sub_separator">
+                <div class="question">
+                    <label for="wall_type">2.1. Z jakiego materiału wykonane są ściany?</label>
+                    <div class="buttons">
+                        <input class="data_lists" list="wall_list" name="wall_type" style="width: 220px" type="text" id="wall" placeholder="Materiał" onclick="uncheck()">
+                        <datalist id="wall_list">
+                                <option value="Beton"></option>
+                                <option value="Cegła"></option>
+                                <option value="Pustak"></option>
+                                <option value="Ściana pełna - Inna "></option>
+                                <option value="Płyta G-K na stelażu (wzmocniona)"></option>
+                                <option value="Płyta G-K klejona do ściany"></option>
+                        </datalist>
+                        <input id="wall_ver" label="Weryfikacja" type="radio" name="wall_type" data-ver="- Ściany (materiał); " value="Wymaga weryfikacji">    
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>2.2. Czy ściany z zabudową kuchenną schodzą się pod kątem 90°?</span></div>
+                    <div class="buttons">
+                        <input label="Tak" type="radio" name="angle" value="Proste (90°)">
+                        <input label="Nie" type="radio" name="angle" value="Inne (≠ 90°) (uniemożliwia to montaż szafek narożnych 88x88cm oraz 68x68cm).">
+                        <input label="Weryfikacja" type="radio" name="angle" data-ver="- Kąty między ścianami; " value="Wymaga weryfikacji (Brak kątów prostych uniemożliwia montaż szafek narożnych 88x88cm oraz 68x68cm)">
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>2.3. Czy są lub będą na ścianie kafelki/panele ścienne/itp.?</span></div>
+                    <div class="buttons">
+                        <input label="Tak" type="radio" name="tiles" onclick="click_tiles_Yes()" id="tiles" value="W obszarze zabudowy kuchennej znajdują się kafelki/panele ścienne.">
+                        <input label="Nie" type="radio" name="tiles" onclick="click_tiles_No()" value="W obszarze zabudowy kuchennej nie ma kafelek/paneli ściennych.">
+                        <input label="Weryfikacja" type="radio" name="tiles" onclick="click_tiles_No()" data-ver="- Umiejscowienie kafelek; " id="tiles_ver" value="Wymaga weryfikacji">    
+                    </div>
+                </div>
+                <div id="window_tiles">
+                    <hr class="sub_separator_small">
+                    <div class="sub_question">
+                        <label for="tiles">2.3.1. Na jakiej wysokości (od i do w mm)?</label>
+                        <div class="buttons">
+                                <input type="number" name="tiles_parameters" id="tiles_down" min="1" max="9999" onclick="click_tiles_parameters_unver()" style="width: 75px;">
+                                <span class="slide">-</span>
+                                <input type="number" name="tiles_parameters" id="tiles_up" min="1" max="9999" onclick="click_tiles_parameters_unver()" style="width: 75px;">    
+                            <input id="tiles_parameters_ver" type="radio" label="Weryfikacja" onclick="click_tiles_parameters_ver()" value="Należy zweryfikować na jakiej wysokości są lub będą kafelki/panele ścienne." name="tiles_parameters" checked>    
+                        </div>
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>2.4. Czy w obszarze zabudowy kuchennej znajduje się okno?</span></div>
+                    <div class="buttons">
+                        <input id="windows_yes" label="Tak" type="radio" name="window" onclick="click_window_Yes()" value="W obszarze zabudowy kuchennej znajduje się okno.">
+                        <input label="Nie" type="radio" name="window" onclick="click_window_No()" value="W obszarze zabudowy kuchennej nie ma okna.">
+                        <input label="Weryfikacja" type="radio" name="window" onclick="click_window_No()" data-ver="- Wymiary/Umiejscowienie okna; " value="Wymaga weryfikacji">
+                    </div>
+                </div>
+                <div id="window_opt">
+                    <hr class="sub_separator_small">
+                        <div class="sub_question">
+                            <label for="ground_window_1">2.4.1. Jaka jest wysokość od wykończonej podłogi do wnęki okiennej? (w mm)</label>
+                            <div class="buttons">
+                                <input type="number" style="width: 75px;" id="ground_window_1" min="1" max="9999" onclick="click_window_ver_1()" >
+                                <input id="window_ver_1" label="Weryfikacja" type="radio" data-ver="- Wysokość do wnęki okiennej; " value="Wysokość od podłogi do wnęki okiennej wymaga weryfikacji.">    
+                            </div>
+                        </div>
+
+                    <hr class="sub_separator_small">
+                    <div class="sub_question">
+                        <label for="ground_window_2">2.4.2. Jaka jest wysokość od wykończonej podłogi do skrzydła okiennego? (w mm)</label>
+                        <div class="buttons">
+                            <input type="number" style="width: 75px;" id="ground_window_2" min="1" max="9999" onclick="click_window_ver_2()" >
+                            <input id="window_ver_2" label="Weryfikacja" type="radio" data-ver="- Wysokość do szydła okiennego; " value="Wysokość od podłogi do skrzydła okiennego wymaga weryfikacji.">    
+                        </div>
+                    </div>
+                    <hr class="sub_separator_small">
+                    <div class="sub_question">
+                        <div class="q_text"><span>2.4.3. Czy będzie kolizja skrzydła okiennego z baterią?</span></div>
+                        <div class="buttons">
+                            <input label="Tak" type="radio" name="window_faucet" value="Będzie kolizja baterii kuchennej z oknem podczas jego otwierania (Klient jest świadomy, że jest to nieergonomiczne rozwiązanie).">
+                            <input label="Nie" type="radio" name="window_faucet" value="Nie będzie kolizji baterii kuchennej z oknem podczas jego otwierania.">
+                            <input label="Weryfikacja" type="radio" name="window_faucet" data-ver="- Umiejscowienie baterii (czy koliduje z oknem); " value="Ewentualna kolizja baterii z oknem wymaga weryfikacji.">    
+                        </div>
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>2.5. Czy w obszarze zabudowy kuchennej znajduje się ogrzewanie podłogowe?</span></div>
+                    <div class="buttons">
+                        <input label="Tak" type="radio" name="floor" value="W obszarze zabudowy kuchennej znajduje się ogrzewanie podłogowe.">
+                        <input label="Nie" type="radio" name="floor" value="W obszarze zabudowy kuchennej nie ma ogrzewania podłogowego.">
+                        <input label="Weryfikacja" type="radio" name="floor" data-ver="- Umiejscowienie ogrzewania podłogowego; " value="Wymaga weryfikacji">    
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>2.6. Czy w obszarze zabudowy kuchennej znajduje się kratka wentylacyjna?</span></div>
+                    <div class="buttons">
+                        <input id="vent_yes" onclick="click_vent_Yes()" label="Tak" type="radio" name="vent" value="W obszarze zabudowy kuchennej znajduje się kratka wentylacyjna.">
+                        <input onclick="click_vent_No()" label="Nie" type="radio" name="vent" value="W obszarze zabudowy kuchennej nie ma kratki wentylacyjnej.">
+                        <input onclick="click_vent_No()" label="Weryfikacja" type="radio" name="vent" data-ver="- Umiejscowienie kratek wentylacyjnych; " value="Wymaga weryfikacji">    
+
+                    </div>
+                </div>
+                <div id="vent_opt">
+                    <hr class="sub_separator_small">
+                    <div class="sub_question">
+                        <div class="q_text"><span>2.6.1. Czy zabudowa meblowa będzie zasłaniać kratkę wentylacyjną?</span></div>
+                        <div class="buttons">
+                            <input label="Tak" type="radio" name="vent_collision" value="Kratka wentylacyjna będzie zasłonięta przez zabudowę meblową (rozwiązanie niezgodne ze Wskazaniami Montażowymi IKEA).">
+                            <input label="Nie" type="radio" name="vent_collision" value="Kratka wentylacyjna nie będzie zasłonięta przez zabudowę meblową.">
+                            <input label="Weryfikacja" type="radio" name="vent_collision" value="Należy zweryfikować czy kratka wentylacyjna będzie zasłonięta przez zabudowę meblową (rozwiązanie niezgodne ze Wskazaniami Montażowymi IKEA).">    
+                        </div>
+                    </div>
+                </div>
+                <hr class="sub_separator">
+                <div class="question">
+                    <div class="q_text"><span>2.7. Czy wszystkie przyłącza wykonane są zgodnie z dołączonymi wskazaniami instalacyjnymi?</span></div>
+                       <div class="buttons">
+                          <input label="Tak" type="radio" name="installation" value="Przyłącza instalacyjne wykonane są zgodnie z dołączonymi wskazaniami instalacyjnymi a wykaz artykułów, które Klient musi dokupić przed montażem kuchni przekazano Klientowi w oddzielnym pliku.">
+                          <input label="Nie" type="radio" name="installation" value="Przyłącza instalacyjne muszą być przygotowane przez Klienta przed montażem kuchni. Informacje dotyczące przygotowania pomieszczenia w sposób umożliwiający montaż IKEA oraz wykaz artykułów, które Klient musi dokupić przed montażem kuchni przekazano Klientowi w oddzielnym pliku.">
+                          <input label="Weryfikacja" type="radio" name="installation" data-ver="- Umiejscowienie przyłączy instalacyjnych (zgodnie z załączoną instrukcją); " value="Wymaga weryfikacji">    
+                        </div>
+                    </div>
+            </div>
+                    <div class="section">
+                        <h2>3. Wyposażenie kuchenne <span class="reload" onclick="reload()">↻</span></h2> 
+<div class="app" id="faucet">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Bateria</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_faucet_1" onclick="click_eq_faucet_1()">IKEA</button>
+                    <button class="button_eq" id="eq_faucet_2" onclick="click_eq_faucet_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_faucet_3" onclick="click_eq_faucet_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="sink">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Zlew</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_sink_1" onclick="click_eq_sink_1()">IKEA</button>
+                    <button class="button_eq" id="eq_sink_2" onclick="click_eq_sink_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_sink_3" onclick="click_eq_sink_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="dish">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Zmywarka</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_dish_1" onclick="click_eq_dish_1()">IKEA</button>
+                    <button class="button_eq" id="eq_dish_2" onclick="click_eq_dish_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_dish_3" onclick="click_eq_dish_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="hub">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Płyta grzewcza</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_hub_1" onclick="click_eq_hub_1()">IKEA</button>
+                    <button class="button_eq" id="eq_hub_2" onclick="click_eq_hub_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_hub_3" onclick="click_eq_hub_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="oven">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Piekarnik</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_oven_1" onclick="click_eq_oven_1()">IKEA</button>
+                    <button class="button_eq" id="eq_oven_2" onclick="click_eq_oven_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_oven_3" onclick="click_eq_oven_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="mw">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Mikrofala</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_micro_1" onclick="click_eq_micro_1()">IKEA</button>
+                    <button class="button_eq" id="eq_micro_2" onclick="click_eq_micro_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_micro_3" onclick="click_eq_micro_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="hood">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Okap</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_hood_1" onclick="click_eq_hood_1()">IKEA</button>
+                    <button class="button_eq" id="eq_hood_2" onclick="click_eq_hood_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_hood_3" onclick="click_eq_hood_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="fridge">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Lodówka</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_fridge_1" onclick="click_eq_fridge_1()">IKEA</button>
+                    <button class="button_eq" id="eq_fridge_2" onclick="click_eq_fridge_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_fridge_3" onclick="click_eq_fridge_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app" id="dw">
+    <hr class="sub_separator">
+    <div class="question">
+        <div class="q_text"><span>Pralka</span></div>
+        <div class="q_radio_tab">
+            <div class="q_radio">
+                <div class="q_radio_button_eq">
+                    <button class="button_eq" id="eq_wm_1" onclick="click_eq_wm_1()">IKEA</button>
+                    <button class="button_eq" id="eq_wm_2" onclick="click_eq_wm_2()">Spoza IKEA</button>
+                    <button class="button_eq" id="eq_wm_3" onclick="click_eq_wm_3()">Montaż własny</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="sub_separator">
+</div>
+                    </div>
+                <button id="note_button" class="main_button" onclick="note_click()">Utwórz notatkę</button>
+                </div>
+                <footer>
+                    <p>Strona wykonana przez:
+                        Studio planowania i zamówień IKEA Rybnik</p>
+                </footer>
+            </div>
+            <div id="modal" class="note">
+                <div class="note_content">
+                    <div class="header_flex">
+                        <h2>Pierwsza strona opisu:</h2>
+                        <span class="close_button" onclick="note_close()">×</span>
+                    </div>
+                    <textarea name="myPagerText" id="pager_text" class="textarea2"></textarea>
+                    <div class="note_flex">
+                        <button id="pagerbutton" class="clip_button" onclick="pager_click()">Kopiuj</button>
+                    </div>
+                    <div class="header_flex">
+                        <h2>Notatki do projektu:</h2>
+                    </div>
+                    <textarea name="myNoteText" id="note_text" class="textarea"></textarea>
+                    <div class="note_flex">
+                        <button id="clipbutton" class="clip_button" onclick="clip_click()">Kopiuj</button>
+                    </div>
+                </div>
+            </div>
+    
+    <script src="script.js"></script>   
+    </body>
+    </html>
